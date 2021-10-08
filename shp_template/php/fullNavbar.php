@@ -10,7 +10,7 @@
                 <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#productos">productos</a></li>
                 <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#contacto">contacto</a></li>
                 <li class="nav-item"><a class="nav-link js-scroll-trigger" href="login.php">ingresar</a></li>
-                <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#">registrarse</a></li>
+                <li class="nav-item"><a class="nav-link js-scroll-trigger" href="registrarseView.php">registrarse</a></li>
                 <li class="nav-item"><a class="nav-link js-scroll-trigger" href="carrito.php"><i class="fas fa-shopping-basket"></i></a></li>
             </ul>
         </div>

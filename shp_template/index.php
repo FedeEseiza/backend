@@ -1,6 +1,6 @@
 <?php 
   include 'php/functions.php';
-  $productos = obtenerProductos();
+  $productos = obtenerProductosQuery();
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -37,7 +37,7 @@
                   <?php foreach ( $productos as $value): ?>
                   <div class="col-xl-3 col-6 mt-4">
                     <div class="producto text-center p-4">
-                      <img src="<?php echo $value['imagen']; ?>" />
+                      <img src="<?php echo $value['url'] ?>" />
                       <h4 class="text-left"><?php echo $value['nombre']; ?></h4>
                       <h5 class="text-left"><?php echo $value['precio']; ?></h5>
                       <button class="btn btn-agregar">Agregar</button>
