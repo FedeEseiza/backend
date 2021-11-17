@@ -17,13 +17,14 @@
         if ($user_data != false){
            if (password_verify($password, $password_hash)){
                 session_start();
-                $_SESSION['usuario'] = $nombre;
-                echo json_encode ($nombre);
+                $_SESSION['user'] = $nombre;
+                header('Location: '. '../index.php');
            }else {
-               echo 'Contraseña invalida';
+               echo 'contraseña invalida';
            }            
         }else{
             echo 'Usuario invalido';
         }	
     }
+    include '../login.php'
 ?>

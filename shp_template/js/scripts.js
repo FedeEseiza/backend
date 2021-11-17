@@ -30,6 +30,31 @@
         }
     });
 
+    $('.btn-agregar').click(function () { 
+        var precio = $(this).attr("data-precio");
+        var imagen = $(this).attr("data-imagen");
+        var nombre = $(this).attr("data-nombre");
+        var id_usuario = $(this).attr("data-id-user")
+        var id_producto = $(this).attr("data-id-producto");
+        $.post("agregar_carrito.php", {
+            id_producto: id_producto,
+            id_usuario: id_usuario,
+            precio: precio,
+            nombre: nombre,
+            imagen: imagen
+        }, function(result){
+          alert("producto insertado!");
+        });
+     });
+
+     $('#cantidad').change(function () { 
+        var cantidad = parseInt($(this).val());
+        var precio = $('#unit-price').text();
+        var subtotal = cantidad * precio; 
+        $('#unit-subtotal').text(subtotal);
+        
+     });
+
     // Closes responsive menu when a scroll trigger link is clicked
     $(".js-scroll-trigger").click(function () {
         $(".navbar-collapse").collapse("hide");

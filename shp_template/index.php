@@ -1,6 +1,7 @@
 <?php 
   include 'php/functions.php';
   $productos = obtenerProductosQuery();
+  session_start(); 
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -40,7 +41,7 @@
                       <img src="<?php echo $value['url'] ?>" />
                       <h4 class="text-left"><?php echo $value['nombre']; ?></h4>
                       <h5 class="text-left"><?php echo $value['precio']; ?></h5>
-                      <button class="btn btn-agregar">Agregar</button>
+                      <button class="btn btn-agregar" data-id-user="<?php echo get_user_id($_SESSION['user'])?>" data-id-producto="<?php echo $value['id'];?>" data-nombre="<?php echo $value['nombre']; ?>" data-precio="<?php echo $value['precio']; ?>" data-imagen="<?php echo $value['url'];?>">Agregar</button>
                     </div>
                   </div>
                   <?php endforeach; ?>

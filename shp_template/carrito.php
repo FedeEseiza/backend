@@ -1,7 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
-      <?php include 'php/head.php' ?>
+      <?php 
+      include('php/functions.php');
+      session_start();
+      $userid = get_user_id($_SESSION['user']);
+      $carrito = obtener_productos_carrito($userid);
+      ?>
     </head>
     <body id="page-top">
         <!-- Navigation-->
@@ -25,28 +30,19 @@
                         </tr>
                       </thead>
                       <tbody>
+                        <?php foreach($carrito as $item){ ?>
                         <tr>
-                          <td class="align-middle"><img src="img/ensalada.png" /></td>
-                          <td class="align-middle text-left">Ensalada</td>
+                          <td class="align-middle"><img src="img/<?php echo $item['imagen'];?>.png" /></td>
+                          <td class="align-middle text-left"><?php echo $item['nombre'];?></td>
                           <td class="align-middle text-center">
                             <input type="number" class="form-control" placeholder="01" id="cantidad">
                           </td>
-                          <td class="align-middle text-center">$300</td>
-                          <td class="align-middle text-center">$300</td>
+                          <td class="align-middle text-center"><span id="precio"><?php echo $item['precio'];?></span></td>
+                          <td class="align-middle text-center">$<span id="subtotal"><?php echo $item['precio'];?></span></td>
                         </tr>
-                        <tr>
-                          <td class="align-middle"><img src="img/pizza.png" /></td>
-                          <td class="align-middle text-left">Pizza</td>
-                          <td class="align-middle text-center">
-                            <input type="number" class="form-control" placeholder="01" id="cantidad">
-                          </td>
-                          <td class="align-middle text-center">$500</td>
-                          <td class="align-middle text-center">$800</td>
-                        </tr>
+                      <?php } ?>
                       </tbody>
                     </table>
-
-
                   </div>
                 </div>
                 <div class="row justify-content-end">

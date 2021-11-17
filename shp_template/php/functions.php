@@ -38,4 +38,23 @@ function obtenerProductosQuery(){
     return $row;
 }
 
+function get_user_id($username){
+    $conexion=conexion();
+    $statement = $conexion->prepare('SELECT * FROM usuarios WHERE nombre = :nombre');
+    $statement ->execute(array( 
+		':nombre' => $username));
+    $user = $statement -> fetchAll();
+    foreach ( $user as $row){
+        return $row['id'];
+    }
+}
+
+function obtener_productos_carrito($userid){
+    $conexion=conexion();
+    $statement = $conexion->prepare('SELECT * FROM carritos WHERE id_usuario = :id');
+    $statement ->execute(array( 
+		':id' => $userid));
+    $carritos = $statement -> fetchAll();
+}
+
 ?>
