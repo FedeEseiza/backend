@@ -55,6 +55,7 @@ function obtener_productos_carrito($userid){
     $statement ->execute(array( 
 		':id' => $userid));
     $carritos = $statement -> fetchAll();
+    return $carritos;
 }
 
 ?>

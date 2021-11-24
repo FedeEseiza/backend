@@ -6,6 +6,9 @@
     <body id="page-top">
         <!-- Navigation-->
         <?php include 'php/simpleNavbar.php' ?>
+        <?php if (!empty($error)) { ?> 
+          <p class="title-error"><?php echo $error; ?></p> 
+        <?php } ?>
         <!-- Masthead-->
         <header class="masthead-login">
             <div class="container d-flex h-100 align-items-center">

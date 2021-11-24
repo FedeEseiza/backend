@@ -20,4 +20,5 @@
             echo 'Contraseña invalida';
         }	
     }
+    include '../registrarseView.php';
 ?>

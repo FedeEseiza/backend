@@ -16,7 +16,7 @@
   --purple: #6f42c1;
   --pink: #e83e8c;
   --red: #dc3545;
-  --orange: #fd7e14;
+  --orange: #EC3939;
   --yellow: #ffc107;
   --green: #28a745;
   --teal: #64a19d;
@@ -40,6 +40,8 @@
   --breakpoint-xl: 1200px;
   --font-family: 'Poppins', sans-serif;
   --font-family: 'Poppins', sans-serif;
+  --btn-primary: #EC3939;
+  --btn-primary-hover: #F51919;
 }
 
 *,
@@ -160,7 +162,7 @@ sup {
 }
 
 a {
-  color: #64a19d;
+  color: #EC3939;
   text-decoration: none;
   background-color: transparent;
 }
@@ -2459,12 +2461,12 @@ fieldset:disabled a.btn {
 
 .btn-primary {
   color: #fff;
-  background-color: #64a19d;
+  background-color: #EC3939;
   border-color: #64a19d;
 }
 .btn-primary:hover {
   color: #fff;
-  background-color: #548b87;
+  background-color: #EC3939;
   border-color: #4f837f;
 }
 .btn-primary:focus, .btn-primary.focus {
@@ -3985,7 +3987,7 @@ input[type=button].btn-block {
 }
 .nav-tabs .nav-link.active,
 .nav-tabs .nav-item.show .nav-link {
-  color: #FF6E00;
+  color: var(--btn-primary);
   background-color: #fff;
   border-color: #dee2e6 #dee2e6 #fff;
 }
@@ -10166,10 +10168,10 @@ body {
     color: #6A6A6A;
   }
   #mainNav .nav-link:hover {
-    color: #FF6E00;
+    color: var(--btn-primary);
   }
   #mainNav .nav-link:active {
-    color: #6A6A6A;
+    color: var(--btn-primary);
   }
   #mainNav.navbar-shrink {
     background-color: #fff;
@@ -10179,20 +10181,20 @@ body {
     color: #6A6A6A;
   }
   #mainNav.navbar-shrink .nav-link {
-    color: #6A6A6A;
+    color: #2A2424;
     padding: 1.5rem 1.5rem 1.25rem;
     border-bottom: 0.25rem solid transparent;
   }
   #mainNav.navbar-shrink .nav-link:hover {
-    color: #FF6E00;
+    color: var(--btn-primary);
   }
   #mainNav.navbar-shrink .nav-link:active {
-    color: #FF6E00;
+    color: var(--btn-primary);
   }
   #mainNav.navbar-shrink .nav-link.active {
-    color: #FF6E00;
+    color: var(--btn-primary);
     outline: none;
-    border-bottom: 0.25rem solid #FF6E00;
+    border-bottom: 0.25rem solid var(--btn-primary);
   }
 }
 
@@ -10219,13 +10221,13 @@ body {
   font-size: 2rem;
   line-height: 2rem;
   font-weight: 900;
-  color: #573240;
+  color: var(--btn-primary);
 }
 .masthead h2 {
   max-width: 20rem;
   font-size: 1rem;
   font-weight: 700;
-  color: #A9D8D5;
+  color: black;
 }
 @media (min-width: 768px) {
   .masthead h1 {
@@ -10261,38 +10263,38 @@ body {
   margin-top: 1.5rem;}
 .producto  h5{
   font-weight: 500;
-  color: #F1B104; }
+  color: #2A2424; }
 
 
 .btn-agregar {
   padding: .5rem 4rem;
-  background: #C3CFE2;
+  background: var(--btn-primary);
   color: #fff;
   font-size: 1rem;
-  border-radius: 0!important;
+  border-radius: 1rem !important;
   margin-top: 1rem;
 }
 .btn-agregar:hover {
-  background: #97ACCC;
+  background: var(--btn-primary-hover);
   color: #fff;
   transition: background 0.20s ease-in-out;
 }
 .btn-enviar {
-  background: #97ACCC;
+  background: var(--btn-primary);
   color: #fff;
   padding: .5rem 4rem;
   font-size: 1.1rem;
   width: inherit;
+  border-radius: 2rem;
 }
 .btn-enviar:hover {
-  background: #7493C3;
+  background: var(--btn-primary-hover);
   color: #fff;
   transition: background 0.20s ease-in-out;
 }
 
 .contacto-section {
   padding: 10rem 0 3rem 0;
-  background-image: url(../img/footer-wave.png);
   background-position: bottom;
   background-repeat:no-repeat;
   background-size:cover;
@@ -10319,9 +10321,10 @@ td img {
   padding: .5rem 4rem;
   font-size: 1.1rem;
   margin-right: 2rem;
+  border-radius: 2rem;
 }
 .btn-comprar:hover {
-  background: #FF6E00;
+  background: var(--btn-primary);
   color: #fff;
   transition: background 0.20s ease-in-out;
 }
@@ -10334,13 +10337,13 @@ td img {
   margin-right: 2rem;
 }
 .btn-login:hover {
-  background: #FF6E00;
+  background: var(--btn-primary);
   color: #fff;
   transition: background 0.20s ease-in-out;
 }
 
 .masthead-login{
-  background-image: url(../img/login.png);
+  background-image: url(../img/burger-pattern.png);
   position: relative;
   width: 100%;
   height: 100vh;
@@ -10350,7 +10353,7 @@ td img {
   background-position-x: right;
   background-repeat: no-repeat;
   background-attachment: scroll;
-  background-size: auto; }
+  background-size: 40rem; }
 .masthead-login h1 {
   font-family: 'Poppins', sans-serif;
   font-size: 3rem;
@@ -10360,7 +10363,6 @@ td img {
 }
 
 .img-footer {
-  background-image: url(../img/footer-wave.png);
   background-position: top;
   background-repeat:no-repeat;
   background-size:cover;
@@ -10448,4 +10450,49 @@ td img {
 
 .footer {
   padding: 5rem 0 0 0;
+}
+
+.burger-icon
+{
+  height: 70%;
+  width: 70%;
+}
+
+.title-icon-navbar
+{
+  color: var(--btn-primary);
+  cursor: none;
+}
+
+.producto-descripcion
+{
+  text-align: left;
+  font-size: 0.8rem;
+}
+
+.btn-eliminar-producto
+{
+  background: var(--btn-primary) !important;
+  border: var(--btn-primary) !important;
+}
+
+.description-about span
+{
+  color: var(--btn-primary);
+}
+
+.img-about
+{
+  border-radius: 2rem;
+}
+
+.title-error
+{
+  color: #000;
+  font-size: 2rem;
+}
+
+.user-icon
+{
+  cursor: none;
 }

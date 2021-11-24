@@ -20,11 +20,12 @@
                 $_SESSION['user'] = $nombre;
                 header('Location: '. '../index.php');
            }else {
-               echo 'contraseña invalida';
+               $error = 'Contraseña invalida';
+               
            }            
         }else{
-            echo 'Usuario invalido';
+            $error = 'Usuario invalido';
         }	
     }
-    include '../login.php'
+    include '../login.php';
 ?>

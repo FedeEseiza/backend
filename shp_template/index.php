@@ -1,12 +1,12 @@
 <?php 
   include 'php/functions.php';
   $productos = obtenerProductosQuery();
-  session_start(); 
 ?>
 <!DOCTYPE html>
 <html lang="en">
     <head>
         <?php include 'php/head.php' ?>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/typed.js/2.0.12/typed.min.js"></script>
     </head>
     <body id="page-top">
         <!-- Navigation-->
@@ -16,14 +16,14 @@
             <div class="container d-flex h-100 align-items-center">
               <div class="col-6 mx-auto">
                 <div class="text-left">
-                    <h1 class="my-0">Comprá online desde tu casa.</h1>
-                    <h2 class="mt-3 mb-5">¡Nosotros te lo llevamos!</h2>
+                    <h1 class="my-0">Las mejores hamburguesas !</h1>
+                    <h2 class="mt-3 mb-5">¡Nosotros te las llevamos!</h2>
+                    <h2 class="mt-1 mb-1 description-about">Horarios de atencion jueves a domingo de: <span class="typing"></span></h2>
                 </div>
               </div>
               <div class="col-6">
-                <img src="img/hero.png"/>
+                  <img class="img-about" src="img/burguer-about.jpg" alt="">
               </div>
-
             </div>
         </header>
         <!-- Productos-->
@@ -31,17 +31,20 @@
             <div class="container">
                 <div class="row mx-auto text-center">
                   <div class="col-lg-8 mx-auto">
-                      <h3 class="mb-4">nuestros productos</h3>
+                      <h3 class="mb-4">Nuestras Hamburguesas</h3>
                   </div>
                 </div>
                 <div class="row align-items-end">
-                  <?php foreach ( $productos as $value): ?>
+                  <?php foreach ($productos as $value): ?>
                   <div class="col-xl-3 col-6 mt-4">
                     <div class="producto text-center p-4">
                       <img src="<?php echo $value['url'] ?>" />
                       <h4 class="text-left"><?php echo $value['nombre']; ?></h4>
-                      <h5 class="text-left"><?php echo $value['precio']; ?></h5>
-                      <button class="btn btn-agregar" data-id-user="<?php echo get_user_id($_SESSION['user'])?>" data-id-producto="<?php echo $value['id'];?>" data-nombre="<?php echo $value['nombre']; ?>" data-precio="<?php echo $value['precio']; ?>" data-imagen="<?php echo $value['url'];?>">Agregar</button>
+                      <p class="producto-descripcion"><?php echo $value['descripcion'] ?></p>
+                      <h5 class="text-left">$<?php echo $value['precio']; ?></h5>
+                      <?php if(isset($_SESSION['user'])){ ?>
+                        <button class="btn btn-agregar" data-id-user="<?php echo get_user_id($_SESSION['user'])?>" data-id-producto="<?php echo $value['id'];?>" data-nombre="<?php echo $value['nombre']; ?>" data-precio="<?php echo $value['precio']; ?>" data-imagen="<?php echo $value['url'];?>">Agregar</button>
+                      <?php } ?>
                     </div>
                   </div>
                   <?php endforeach; ?>

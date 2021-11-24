@@ -2,26 +2,26 @@
     <div class="container">
         <div class="row mx-auto text-center">
         <div class="col-lg-8 mx-auto">
-            <h3 class="mb-4">contacto</h3>
+            <h3 class="mb-4">Contacto</h3>
         </div>
         </div>
         <div class="row">
         <div class="col-lg-8 col-12 mx-auto">
-        <form>
+        <form action="https://usebasin.com/f/8bba71c3fa5b" method="POST">
             <div class="row mb-3">
             <div class="col">
-                <input type="text" class="form-control" placeholder="Nombre" id="name">
+                <input required type="text" class="form-control" placeholder="Nombre" id="name">
             </div>
             <div class="col">
-                <input type="text" class="form-control" placeholder="Apellido" id="lastname">
+                <input required type="text" class="form-control" placeholder="Apellido" id="lastname">
             </div>
             </div>
             <div class="row mb-3">
             <div class="col">
-                <input type="text" class="form-control" placeholder="Teléfono" id="phone">
+                <input required type="text" class="form-control" placeholder="Teléfono" id="phone">
             </div>
             <div class="col">
-                <input type="text" class="form-control" placeholder="Email" id="email">
+                <input required type="text" class="form-control" placeholder="Email" id="email">
             </div>
             </div>
             <div class="row mb-3">

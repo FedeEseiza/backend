@@ -1,8 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
-      <?php 
-      include('php/functions.php');
+      <?php
+      include 'php/head.php'; 
+      include 'php/functions.php';
       session_start();
       $userid = get_user_id($_SESSION['user']);
       $carrito = obtener_productos_carrito($userid);
@@ -27,22 +28,26 @@
                           <th class="col-1 text-center">cantidad</th>
                           <th class="col-2 text-center">precio</th>
                           <th class="col-2 text-center">subtotal</th>
+                          <th class="col-2 text-center">borrar</th>
                         </tr>
                       </thead>
                       <tbody>
                         <?php foreach($carrito as $item){ ?>
                         <tr>
-                          <td class="align-middle"><img src="img/<?php echo $item['imagen'];?>.png" /></td>
+                          <span hidden></span>
+                          <td class="align-middle"><img src="<?php echo $item['img'];?>" /></td>
                           <td class="align-middle text-left"><?php echo $item['nombre'];?></td>
                           <td class="align-middle text-center">
-                            <input type="number" class="form-control" placeholder="01" id="cantidad">
+                            <input type="number" class="form-control cantidad" placeholder="0">
                           </td>
-                          <td class="align-middle text-center"><span id="precio"><?php echo $item['precio'];?></span></td>
-                          <td class="align-middle text-center">$<span id="subtotal"><?php echo $item['precio'];?></span></td>
+                          <td class="align-middle text-center"><span class="precio"><?php echo $item['precio'];?></span></td>
+                          <td class="align-middle text-center">$<span class="subtotal"><?php echo $item['precio'];?></span></td>
+                          <td class="align-middle text-center"><button  data-id="<?php echo $item['id_producto'];?>" class="btn btn-primary btn-eliminar-producto"><i class="fas fa-times"></i></button></td>
                         </tr>
                       <?php } ?>
                       </tbody>
                     </table>
+                    <h5>Total compra: <span id="total">0</span></h5>
                   </div>
                 </div>
                 <div class="row justify-content-end">
@@ -61,5 +66,6 @@
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js"></script>
         <!-- Core theme JS-->
         <script src="js/scripts.js"></script>
+       
     </body>
 </html>

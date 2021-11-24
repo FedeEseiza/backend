@@ -34,7 +34,7 @@
         var precio = $(this).attr("data-precio");
         var imagen = $(this).attr("data-imagen");
         var nombre = $(this).attr("data-nombre");
-        var id_usuario = $(this).attr("data-id-user")
+        var id_usuario = $(this).attr("data-id-user");
         var id_producto = $(this).attr("data-id-producto");
         $.post("agregar_carrito.php", {
             id_producto: id_producto,
@@ -47,12 +47,29 @@
         });
      });
 
-     $('#cantidad').change(function () { 
-        var cantidad = parseInt($(this).val());
-        var precio = $('#unit-price').text();
-        var subtotal = cantidad * precio; 
-        $('#unit-subtotal').text(subtotal);
+     $('.btn-eliminar-producto').click(function () { 
+        var id_producto = $(this).attr("data-id");
+        console.log(id_producto);
+        $.post("eliminar_producto.php", {
+            id_producto: id_producto
+        }, function(result){
+          window.location.reload();
+        });
         
+       
+     });
+
+     $('.cantidad').change(function () { 
+        var cantidad = $(this).val();
+        var precio = $(this).parent().parent().find('.precio').text();
+        var subtotal = cantidad * precio; 
+        $(this).parent().parent().find('.subtotal').text(subtotal);
+
+        var total = 0;
+        $('.subtotal').each(function(){
+            total = parseInt($(this).text()) + total;
+        });
+        $("#total").text(total);
      });
 
     // Closes responsive menu when a scroll trigger link is clicked
@@ -78,4 +95,12 @@
     navbarCollapse();
     // Collapse the navbar when page is scrolled
     $(window).scroll(navbarCollapse);
+    
+    // ANIMATION TYPED TEXT
+    var typed = new Typed(".typing",{
+    strings: ["19:00 a 00:00"],
+    typeSpeed: 100,
+    backSpeed: 60,
+    loop: true
+})
 })(jQuery); // End of use strict
